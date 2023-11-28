@@ -18,6 +18,7 @@ ul {
 details {
     summary {
         position: relative;
+        z-index: 1;
         width: 24px;
         height: 24px;
         
@@ -55,16 +56,18 @@ details {
         content: "\2715";
     }
 
-    &[open] .navbar-mobile {
+    &[open] > .navbar-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        
         min-height: 100vh; /* Max Viewer Height */
-    }
-
-    .navbar-mobile {
+        width: 100%;
+        
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        margin-top: -28px; /* box + top border + bottom border : 24px + 2px + 2px  */
+        
         background-color: #ccc;
     }
 }
