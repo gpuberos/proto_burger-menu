@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+}
+
 /* ==========================================================================
   Proto Burger Menu - Details
   ========================================================================== */
@@ -36,6 +40,11 @@ details {
         transform: translateX(-50%);
     }
 
+    /* Removed arrow marker */
+    summary::marker {
+        font-size: 0;
+    }
+
     /* When details is closed show burder menu icon */
     summary::before {
         content: "\2630";
@@ -46,8 +55,16 @@ details {
         content: "\2715";
     }
 
-    /* Removed arrow marker */
-    summary::marker {
-        font-size: 0;
+    &[open] .navbar-mobile {
+        min-height: 100vh; /* Max Viewer Height */
+    }
+
+    .navbar-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: -28px; /* box + top border + bottom border : 24px + 2px + 2px  */
+        background-color: #ccc;
     }
 }
