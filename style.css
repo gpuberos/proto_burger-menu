@@ -1,0 +1,61 @@
+/**
+ * TODO?
+ * Add close icon when details [open] OK
+ * Fix Content Alignment details border block (Test with Unicode Symbols)
+ * Replace Fontawesome with Unicode Symbols https://www.toptal.com/designers/htmlarrows/symbols/
+ */
+
+/* ==========================================================================
+  CSS Reset
+  ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+  Proto Burger Menu - Details
+  ========================================================================== */
+
+details {
+    summary {
+        position: relative;
+        width: 24px;
+        height: 18px;
+        
+        padding: 12px 10px;
+        /* border: 2px solid #000;
+        border-radius: 4px; */
+
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+
+        font-family: "Font Awesome 6 Free";
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+    }
+
+    summary::after {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+
+    /* When details is closed show burder menu icon */
+    summary::after {
+        content: "\f0c9";
+    }
+
+    /* When details is open show X mark icon */
+    &[open] > summary::after {
+        content: "\f00d";
+    }
+
+    /* Removed arrow marker */
+    summary::marker {
+        font-size: 0;
+    }
+}
