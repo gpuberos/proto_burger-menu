@@ -1,0 +1,73 @@
+/* ==========================================================================
+  CSS Reset
+  ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+  Proto Burger Menu - Details
+  ========================================================================== */
+
+details {
+    summary {
+        position: relative;
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+        
+        padding: 12px;
+        border: 2px solid #000;
+        border-radius: 4px;
+
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+
+        font-size: 1rem;
+        font-weight: 600;
+        color: #000;
+    }
+
+    summary::before {
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    /* Removed arrow marker */
+    summary::marker {
+        font-size: 0;
+    }
+
+    /* When details is closed show burder menu icon */
+    summary::before {
+        content: "\2630";
+    }
+
+    /* When details is open show X mark icon */
+    &[open] > summary::before {
+        content: "\2715";
+    }
+
+    &[open] > .navbar-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        
+        min-height: 100vh; /* Max Viewer Height */
+        width: 100%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: #ccc;
+    }
+}

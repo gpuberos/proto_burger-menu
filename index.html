@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Prototype Burdger Menu with Details</title>
+    <title>Prototype Burger Menu with input checkbox</title>
 </head>
 <body>
     <header>
-        <details>
-            <summary></summary>
-            <nav class="navbar-mobile">
-                <ul class="menu-list">
-                    <li><a href="#" class="current">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </details>
+        <nav class="navbar mobile">
+
+            <input id="menu__toggle" type="checkbox" aria-label="Toggle Navigation">
+            <label class="menu__btn" for="menu__toggle"></label>
+
+            <ul class="menu__box">
+                <li><a href="#" class="current">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 </body>
 </html>
